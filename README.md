@@ -1,5 +1,5 @@
 # infer_names_from_flows
-Code to infer the domain name of a flow given its tcp flow features using tensorflow. Learns from the topn most frequent domain names in the flow data. 
+Code to infer the domain name of an HTTPS flow given its tcp flow features using tensorflow. Learns from the topn most frequent domain names in the flow data. 
 
 
 ## Get flow data using tstat.polito.it
