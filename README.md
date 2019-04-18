@@ -3,7 +3,7 @@ Code to infer the domain name of an HTTPS flow given its tcp flow features using
 
 
 ## Get flow data using tstat.polito.it
-Capture some packets with tcpdump and process it with tstat, or capture with tstat directly. Use log_tcp_complete tstat data; convert to csv. 
+Capture some packets with tcpdump and process them with tstat, or capture with tstat directly. Use log_tcp_complete tstat data; convert to csv. http://tstat.polito.it/measure.shtml
 
 ## Install tensorflow
 https://www.tensorflow.org/install/docker
