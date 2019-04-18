@@ -8,9 +8,11 @@ Capture some packets with tcpdump and process them with tstat, or capture with t
 ## Install tensorflow
 https://www.tensorflow.org/install/docker
 
+```docker
 FROM tensorflow/tensorflow:1.13.1-py3-jupyter
-RUN pip install --upgrade pandas
 
+RUN pip install --upgrade pandas
+```
 
 ## Build a dataset from tstat csv output
 python infer_names_from_flows.py --do_what=build_dataset --tstat_csv=mytstatcapture.csv --tstat_npy=mytstatcapture.npy --topn=50
