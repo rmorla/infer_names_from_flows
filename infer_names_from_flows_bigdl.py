@@ -169,8 +169,9 @@ if __name__ == "__main__":
             optim_method=SGD(learningrate=0.01, learningrate_decay=0.0002),
             end_trigger=get_end_trigger(options),
             batch_size=options.batchSize)
+        optimizer.set_checkpoint(get_end_trigger(options), options.modelPath)
         trained_model = optimizer.optimize()
-        trained_model.saveModel(options.modelPath, over_write=True)
+        #trained_model.saveModel(options.modelPath, over_write=True)
         # compute and save accuracy results from the test data
         results = trained_model.evaluate(test_data, options.batchSize, [Top1Accuracy()])
         rdd = sc.parallelize(results).map(lambda result: "train, {}, {}, {}, {}, {}, {}, {}".format(options.trainingPercentage, result.result,        result.total_num, len (info_data["topn_counts"]), info_data["topn_counts"][-1], datetime.now(), options.infoDataFile))
