@@ -185,7 +185,7 @@ if __name__ == "__main__":
         model = Model.load(options.modelPath)
         results = model.evaluate(test_data, options.batchSize, [Top1Accuracy()])
         # save results
-        rdd = sc.parallelize(results).map(lambda result: "test, {}, {}, {}, {}, {}, {}".format(result.result, result.total_num, len (info_data["topn_counts"]), info_data["topn_counts"][-1], datetime.now(), options.infoDataFile))
+        rdd = sc.parallelize(results).map(lambda result: "test, {}, {}, {}, {}, {}, {}, {}".format(result.result, result.total_num, len (info_data["topn_counts"]), info_data["topn_counts"][-1], datetime.now(), options.infoDataFile, options.dataPath))
         rdd.saveAsTextFile(options.resultsFile)
 
     sc.stop()
